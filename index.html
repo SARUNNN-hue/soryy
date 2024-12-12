@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgive Me</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        h1 {
+            color: #e94d58;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #333;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .gif {
+            width: 300px;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .yes-btn {
+            background: #e94d58;
+            color: white;
+        }
+
+        .yes-btn:hover {
+            background: #d43b47;
+        }
+
+        .no-btn {
+            background: white;
+            color: #e94d58;
+            border: 2px solid #e94d58;
+        }
+
+        .no-btn:hover {
+            background: #fdd1d4;
+        }
+
+        .notice {
+            position: absolute;
+            top: 10%;
+            right: -50px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: rotate(-5deg);
+            width: 200px;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .cloud {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            width: 250px;
+        }
+
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>I'm Sorry</h1>
+        <p>I made a mistake, and I deeply regret it. Please forgive me.</p>
+        <img class="gif" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDJjano1aW4zcWlqZ2dnMHptZjlydnNqeXRtcmU3c2Z3bHRtNTdidyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ysp6c2yH1U6Tvi5APK/giphy.webp" alt="Apology Sticker">
+        <div class="btn-group">
+            <button class="yes-btn" onclick="playYesResponse()">Yes, I forgive you</button>
+            <button class="no-btn" onclick="playNoResponse()">No, not yet</button>
+        </div>
+        <div class="notice">I hope you can forgive me! ❤️</div>
+        <img class="cloud" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cloud_icon.svg/1024px-Cloud_icon.svg.png" alt="Cloud">
+    </div>
+
+    <audio id="yes-audio" src="song.mp3"></audio>
+    <audio id="no-audio" src="error-sound.mp3"></audio>
+
+    <script>
+        function playYesResponse() {
+            document.querySelector('#yes-audio').play();
+            alert('Thank you for forgiving me! I love you ❤️');
+        }
+
+        function playNoResponse() {
+            document.querySelector('#no-audio').play();
+            alert('I understand, I will try harder to make it up to you.');
+        }
+    </script>
+</body>
+</html>
